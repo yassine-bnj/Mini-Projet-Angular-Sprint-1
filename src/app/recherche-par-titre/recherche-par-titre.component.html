@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Recherche Livre par Titre</h1>
+    <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2 ">
+    <label>Titre Livre</label>
+    <input class="form-control" #titreLivre (keyup)="onKeyUp(titreLivre.value)">
+   
+    </div>
+    </form>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Prix</th>
+                    <th>Date Création</th>
+                    <th>Type</th>
+
+                </tr>
+                <tbody *ngFor="let livre of filtredLivres">
+                    <tr>
+                        <td>{{livre.idLivre}}</td>
+                        <td>{{livre.titreLivre}}</td>
+                        <td>{{livre.auteurLivre}}</td>
+                        <td>{{livre.prixLivre}}</td>
+                        <td>{{livre.dateParution | date:'dd/MM/yyyy'}}</td>
+                        <td>{{livre.type.nomType}}</td>
+                       
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+            </div>
+            
